@@ -94,7 +94,9 @@ public class SudokuSolver {
             Properly indexing the squares list of sets is tricky. Verify that your
             algorithm is correct.
          */
-        Set<Integer> possibleNums = new HashSet<Integer>(this.nums);
+        Set<Integer> possibleNums = new HashSet<Integer>();
+        possibleNums.addAll(this.nums);
+        
         // ...
 
         // if there are no possible numbers, we cannot solve the board in its current state
@@ -136,6 +138,18 @@ public class SudokuSolver {
         }
 
         return str;
+    }
+
+    public int mapCellToSquare(int row, int col)
+    {
+        /*
+         * Given the specific row and column in the grid, return the index for the
+         *  corresponding square set in the list
+        */ 
+
+        // ...
+
+        return 0;
     }
 
     public static void main(String[] args) {
