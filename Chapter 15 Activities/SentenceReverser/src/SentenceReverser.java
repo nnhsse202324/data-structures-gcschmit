@@ -17,7 +17,23 @@ public class SentenceReverser
     	Scanner scanner = new Scanner(sentence);
     	
         // Complete this method. Use a Stack.
-        ...
+        Stack<String> words = new Stack<>();
+
+        while(scanner.hasNext())
+        {
+            String word = scanner.next();
+            words.push(word);
+        }
+
+        System.out.println(words);
+
+        String reverseSentence = "";
+        while(words.size() > 0)
+        {
+            reverseSentence += words.pop();
+        }
+        
+        return reverseSentence;
 
 
 
