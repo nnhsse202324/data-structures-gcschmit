@@ -52,6 +52,23 @@ public class StringLengthMap2 {
                  * The method must return the "merged" value to be added to the map. The method
                  * is only invoked if there is already an association in the map and, therefore,
                  * the values have to be "merged".
+                 * 
+                 * Here is the implementation of the merge method, which illustrates where it
+                 * calls the remappingFunction (our variable len corresponds to the key
+                 * parameter and our variable word corresponds to the value parameter):
+                 * 
+                 * V oldValue = map.get(key);
+                 * V newValue;
+                 * if(oldValue == null)
+                 *      newValue = value;
+                 * else
+                 *      newValue = remappingFunction.apply(oldValue, value);
+                 * 
+                 * if (newValue == null)
+                 *      map.remove(key);
+                 * else
+                 *      map.put(key, newValue);
+                 * 
                  */
                 words.merge(len, word, StringLengthMap2::remappingFunction);
 
