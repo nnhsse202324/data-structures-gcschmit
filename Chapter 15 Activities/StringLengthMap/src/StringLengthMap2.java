@@ -84,7 +84,7 @@ public class StringLengthMap2 {
                  * implied.
                  */
                 words.merge(len, word,
-                        (oldValue, newValue) -> oldValue.concat(", " + word));
+                        (oldValue, newValue) -> oldValue.concat(", " + newValue));
 
                 /*
                  * If the definition spans multiple statements, curly brackets are
@@ -92,8 +92,8 @@ public class StringLengthMap2 {
                  */
                 words.merge(len, word,
                         (oldValue, newValue) -> {
-                            if (oldValue.indexOf(word) == -1)
-                                return oldValue.concat(", " + word);
+                            if (oldValue.indexOf(newValue) == -1)
+                                return oldValue.concat(", " + newValue);
                             else
                                 return oldValue;
                         });
