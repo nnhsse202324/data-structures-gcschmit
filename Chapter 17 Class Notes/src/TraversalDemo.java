@@ -16,9 +16,11 @@ public class TraversalDemo
         t2.addSubtree(t4);
 
         // Count short names with visitor
-        /*class ShortNameCounter implements Tree.Visitor
+        class ShortNameCounter implements Tree.Visitor
         {
             public int counter = 0;
+
+            @Override
             public void visit(Object data)
             {
                 System.out.println(data);
@@ -29,6 +31,6 @@ public class TraversalDemo
         ShortNameCounter v = new ShortNameCounter();
 
         t1.preorder(v);
-        System.out.println("Short names: " + v.counter);        */
+        System.out.println("Short names: " + v.counter);
     }
 }
