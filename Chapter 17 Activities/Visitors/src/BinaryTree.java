@@ -1,3 +1,5 @@
+import apple.laf.JRSUIUtils.Tree;
+
 /**
     Add methods
         void preorder(Visitor v)
@@ -96,5 +98,33 @@ public class BinaryTree
         BinaryTree result = new BinaryTree();
         result.root = root.right;
         return result;
+    }
+
+    private static void preorder(Node n, Visitor v)
+    {
+        if(n == null) return;
+
+        v.visit(n.data);
+        BinaryTree.preorder(n.left, v);
+        BinaryTree.preorder(n.right, v);
+    }
+
+    private static void inorder(Node n, Visitor v)
+    {
+        if(n == null) return;
+
+        BinaryTree.inorder(n.left, v);
+        v.visit(n.data);
+        BinaryTree.inorder(n.right, v);
+    }
+
+    private static void postorder(Node n, Visitor v)
+    {
+        if(n == null) return;
+
+        BinaryTree.postorder(n.left, v);
+        BinaryTree.postorder(n.right, v);
+        v.visit(n.data);
+        
     }
 }
