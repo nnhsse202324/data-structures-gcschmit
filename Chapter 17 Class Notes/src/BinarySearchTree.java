@@ -78,7 +78,7 @@ public class BinarySearchTree
 
         while(!found && toBeRemoved != null)
         {
-            int diff = obj.compareTo(toBeRemoved.data)
+            int diff = obj.compareTo(toBeRemoved.data);
             if(diff == 0)
             {
                 found = true;
@@ -159,12 +159,15 @@ public class BinarySearchTree
         }
     }
     
+    
+    
     /**
         Prints the contents of the tree in sorted order.
     */
     public void print()
     {   
-        
+        print(this.root);
+        System.out.println();
     }   
 
     /**
@@ -173,7 +176,14 @@ public class BinarySearchTree
     */
     private static void print(Node parent)
     {   
+        if(parent == null)
+        {
+            return;
+        }
         
+        print(parent.left);
+        System.out.println(parent.data + " ");
+        print(parent.right);
     }
 
     /**
