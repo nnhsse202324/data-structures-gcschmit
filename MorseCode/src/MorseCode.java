@@ -14,7 +14,7 @@ public class MorseCode
     public static void main(String[] args)
     {
         MorseCode.start();  
-        System.out.println(MorseCode.encode("Watson come here"));
+        //System.out.println(MorseCode.encode("Watson come here"));
         BTreePrinter.printNode(decodeTree);
     }
 
