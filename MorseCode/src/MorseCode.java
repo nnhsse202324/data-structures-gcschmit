@@ -21,8 +21,9 @@ public class MorseCode
     public static void start()
     {
         codeMap = new TreeMap<Character, String>();
-        decodeTree = new TreeNode(' ', null, null);  // autoboxing
+
         // put a space in the root of the decoding tree
+        decodeTree = new TreeNode(' ', null, null);
 
         addSymbol('A', ".-");
         addSymbol('B', "-...");
@@ -94,7 +95,8 @@ public class MorseCode
      * Converts text into a Morse code message.  Adds a space after a dot-dash
      * sequence for each letter.  Other spaces in the text are transferred directly
      * into the encoded message.
-     * Returns the encoded message.
+     * 
+     * @return returns the encoded message
      */
     public static String encode(String text)
     {
@@ -111,7 +113,8 @@ public class MorseCode
      * Converts a Morse code message into a text string.  Assumes that dot-dash
      * sequences for each letter are separated by one space.  Additional spaces are
      * transferred directly into text.
-     * Returns the plain text message.
+     * 
+     * @return returns the plain text message
      */
     public static String decode(String morse)
     {
